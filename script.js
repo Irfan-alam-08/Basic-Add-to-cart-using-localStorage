@@ -36,7 +36,7 @@ const displayCartItems = () => {
 
         // showing data in UI
         li.innerHTML =
-            `${item.product} : ${item.quantity} <button onclick="handleRemoveFromCart('${product}')"><i class="fa-solid fa-x"></i></button>`;
+            `${item.product} : ${item.quantity} <button onclick="handleRemoveFromCart('${item.product}')"><i class="fa-solid fa-x"></i></button>`;
 
         ul.append(li);
     }
@@ -132,7 +132,7 @@ const handleAddToCart = () => {
     productEl.value = '';
     quantityEl.value = '';
 };
-handleRemoveFromCart = (product) => {
+const handleRemoveFromCart = (product) => {
 
     const cart = getCartFromLocalStorage();
 
